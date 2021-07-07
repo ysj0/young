@@ -1,8 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div style="weight: 2rem; height: 10rem; background-color: green">
-        <h1>본문입니다222</h1>
+
+    <style>
+    .testing{
+        background-color: yellow;
+        margin: 1rem;
+        height: 48px;
+        width:48px;
+        border-radius: .5rem;
+        display: inline-block;
+</style>
+     <div style="height: 20rem; background-color: aquamarine; margin: 2rem; border-radius: 1rem; font-size:2rem; overflow: hidden;">
+
+         <div class="testing" style="height: 48px; width: 48px">px</div>
+         <div class="testing" style="height: 3rem; width: 3rem">rem</div>
+         <div class="testing" style="height: 3em; width: 3em">em</div>
+         <div class="testing" style="height: 30%; width: 30%">%</div>
+       </div>
     </div>
 {% endblock %}
 
