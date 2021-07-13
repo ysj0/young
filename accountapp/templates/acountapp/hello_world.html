@@ -14,8 +14,12 @@
              <input type="submit" class="btn btn-outline-success rounded-pill px-5">
 
          </form>
+     {% for data in data_list %}
 
-         <h3>{{model_instance.text}}</h3>
+
+         <h3>{{data.text}}</h3>
+     {% endfor %}
+
      </div>
 
 {% endblock %}
