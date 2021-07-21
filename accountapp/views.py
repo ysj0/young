@@ -38,6 +38,20 @@ class AccountCreateView(CreateView):
     success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/create.html'
 
+
+class AccountDetailView(DetailView):
+    model = User
+    context_object_name = 'target_user'
+    template_name = 'accountapp/detail.html'
+
+
+class AccountUpdateView(UpdateView):
+    model = User
+    form_class = AccountCreationForm
+    context_object_name = 'target_user'
+    success_url = reverse_lazy('accountapp:hello_world')
+    template_name = 'accountapp/update.html'
+
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             return super().get(request, *args, **kwargs)
@@ -52,18 +66,6 @@ class AccountCreateView(CreateView):
             return HttpResponseRedirect(reverse('accountapp:login'))
 
 
-class AccountDetailView(DetailView):
-    model = User
-    context_object_name = 'target_user'
-    template_name = 'accountapp/detail.html'
-
-
-class AccountUpdateView(UpdateView):
-    model = User
-    form_class = AccountCreationForm
-    context_object_name = 'target_user'
-    success_url = reverse_lazy('accountapp:hello_world')
-    template_name = 'accountapp/update.html'
 
 class AccountDeleteView(DeleteView):
     model = User
