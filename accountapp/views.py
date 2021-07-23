@@ -10,7 +10,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
 from accountapp.models import NewModel
-from accountapp.decoraters import account_ownership_required
+from accountapp.decorators import account_ownership_required
 from accountapp.templates.accountapp.forms import AccountCreationForm
 
 
