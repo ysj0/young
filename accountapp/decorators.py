@@ -1,14 +1,12 @@
+from django.contrib.auth.models import User
+from django.http import HttpResponseForbidden
 
-def decorator(func):
-    def decorated(input_text):
-        print('함수 시작!')
-        func(input_text)
-        print('함수 끝!')
+
+def account_ownership_required(func):
+    def decorated(request, *args, **kwargs):
+        target_user = User.objects.get(pk=kwargs['pk'])
+        if target_user == request.user:
+            return func(request, *args, **kwargs)
+        else:
+            return HttpResponseForbidden
     return decorated
-
-
-@decorator
-def hello_world(input_text):
-    print(input_text)
-
-hello_world('Hello World')
