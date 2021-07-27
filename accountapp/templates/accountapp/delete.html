@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
 
     <div class="text-center mw-500 m-auto">
@@ -11,11 +10,10 @@
             <form action="{% url 'accountapp:delete' pk=target_user.pk %}" method="post">
                 {% csrf_token %}
                 <div class="m-5">
-                    <input type="submit"
-                       class="btn btn-dark rounded-pill px-5">
+                    <input type="submit" class="btn btn-dark rounded-pill px-5">
                 </div>
             </form>
-         </div>
+        </div>
     </div>
 
 {% endblock %}

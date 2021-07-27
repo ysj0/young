@@ -11,13 +11,11 @@
             <form action="{% url 'accountapp:login' %}" method="post">
                 {% csrf_token %}
                 {% bootstrap_form form %}
-
                 <div class="m-5">
-                    <input type="submit"
-                       class="btn btn-dark rounded-pill px-5">
+                    <input type="submit" class="btn btn-dark rounded-pill px-5">
                 </div>
             </form>
-         </div>
+        </div>
     </div>
 
 {% endblock %}
