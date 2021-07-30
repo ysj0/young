@@ -22,7 +22,7 @@ class ProfileCreateView(CreateView):
         form.instance.user = self.request.user  # 유저 특정해주기, 폼이 생성되면
         return super().form_valid(form)
 
-   def get_success_url(self):
+    def get_success_url(self):
        return reverse('accountapp:detail', kwargs={'pk':self.object.user.pk})
 
 @method_decorator(profile_ownership_required,'get')
